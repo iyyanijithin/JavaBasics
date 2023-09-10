@@ -1,6 +1,7 @@
 package org.example.sample;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,5 +35,16 @@ public class ListOperations {
         List<String> names = List.of("One","Two","Three");
         names.stream().filter(val-> val.equalsIgnoreCase("one"))
                 .map(val-> val.length()).forEach(System.out::println);
+
+        //remove element from the list
+        List<String> modifiable = new ArrayList<>(names);
+        modifiable.removeIf(val -> val.equals("One"));
+        modifiable.stream().forEach(System.out::println);
+
+
+        //replace all the elements of list
+        modifiable = new ArrayList<>(names);
+        modifiable.replaceAll(val-> val.toUpperCase());
+        modifiable.stream().forEach(System.out::println);
     }
 }

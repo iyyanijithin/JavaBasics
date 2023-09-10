@@ -1,6 +1,7 @@
 package org.example.sample;
 
 import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -21,5 +22,9 @@ public class PredicatOperations {
         List<Integer> numbers = List.of(1,2,3,4,5);
         System.out.println(numbers.stream().filter(p1).collect(Collectors.toList()).size());
 
+        BiPredicate<String,String> bi = (s1,s2)->{
+            return s1.equals(s2);
+        };
+        System.out.println(bi.test("test","test"));
     }
 }

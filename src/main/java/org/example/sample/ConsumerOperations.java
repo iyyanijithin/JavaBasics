@@ -1,6 +1,7 @@
 package org.example.sample;
 
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ConsumerOperations {
@@ -13,5 +14,9 @@ public class ConsumerOperations {
         List<Integer> val = List.of(1,2,3,4,5);
         val.stream().forEach(c1);
 
+        BiConsumer<String,Integer> bc = (val1,val2)->{
+            System.out.println(val1.length() + val2);
+        };
+        bc.accept("s1",1);
     }
 }
